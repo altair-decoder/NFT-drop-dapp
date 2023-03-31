@@ -73,8 +73,8 @@ export default function ERC721MintButton(props) {
         addToast("Mint number could not be 0", { appearance: "error" })
     }
     function increase() {
-        if (mintNum + 1 < 3) {
-            if (mintNum >= 2 - mintCountdata) {
+        if (mintNum + 1 < 11) {
+            if (mintNum >= 10 - mintCountdata) {
                 addToast("Exceed Maximum Mint Number", { appearance: "error" })
             } else {
                 setmintNum(mintNum + 1)
@@ -100,13 +100,45 @@ export default function ERC721MintButton(props) {
                 setprice(ethers.utils.parseEther("0.2"))
                 setvalue("0.2")
             }
+            if (mintNum == 3) {
+                setprice(ethers.utils.parseEther("0.3"))
+                setvalue("0.3")
+            }
+            if (mintNum == 4) {
+                setprice(ethers.utils.parseEther("0.4"))
+                setvalue("0.4")
+            }
+            if (mintNum == 5) {
+                setprice(ethers.utils.parseEther("0.5"))
+                setvalue("0.5")
+            }
+            if (mintNum == 6) {
+                setprice(ethers.utils.parseEther("0.6"))
+                setvalue("0.6")
+            }
+            if (mintNum == 7) {
+                setprice(ethers.utils.parseEther("0.7"))
+                setvalue("0.7")
+            }
+            if (mintNum == 8) {
+                setprice(ethers.utils.parseEther("0.8"))
+                setvalue("0.8")
+            }
+            if (mintNum == 9) {
+                setprice(ethers.utils.parseEther("0.9"))
+                setvalue("0.9")
+            }
+            if (mintNum == 10) {
+                setprice(ethers.utils.parseEther("0.10"))
+                setvalue("0.10")
+            }
         }
     }, [mintNum])
     return (
         <div>
             {address && (
                 <div>
-                    <div className="">You Minted {mintCountdata} / Max Mint Count 2</div>
+                    <div className="">You Minted {mintCountdata} / Max Mint Count 10</div>
 
                     <div className="mt-8 grid grid-cols-3 gap-5 items-center justify-center text-center">
                         <button className={styles.mintButton} onClick={decrease}>
@@ -128,7 +160,7 @@ export default function ERC721MintButton(props) {
                         </button>
                     )}
                     <div className="mt-4 grid grid-cols-2 gap-30">
-                        <a href={`${props.scan}${props.contractaddress}`}>
+                        <a target="_blank" href={`${props.scan}${props.contractaddress}`}>
                             <button className="">
                                 <Image
                                     src="/etherscan.png"
@@ -138,7 +170,10 @@ export default function ERC721MintButton(props) {
                                 ></Image>
                             </button>
                         </a>
-                        <a href={`https://testnets.opensea.io/collection/${props.opensea}`}>
+                        <a
+                            target="_blank"
+                            href={`https://testnets.opensea.io/collection/${props.opensea}`}
+                        >
                             <button className="">
                                 <Image
                                     src="/opensea.png"
@@ -153,7 +188,7 @@ export default function ERC721MintButton(props) {
             )}
             {!address && (
                 <div>
-                    <div className="">You Minted ? / Max Mint Count 2</div>
+                    <div className="">You Minted ? / Max Mint Count 10</div>
 
                     <div className="mt-8  grid grid-cols-3 gap-5 items-center justify-center text-center">
                         <button className={styles.mintButton} onClick={connectwalletnotice}>

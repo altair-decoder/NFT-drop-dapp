@@ -37,6 +37,7 @@ export default function Welcome() {
                     <hr />
                     <Mintingcomponent />
                     <p className="mb-10"></p>
+                    <Partnerscomponent />
                 </div>
             </div>
         </div>

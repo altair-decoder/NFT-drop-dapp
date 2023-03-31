@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Bottom from "../components/Bottom"
 import Header from "../components/Header"
 import Welcome from "../components/Welcome"
 export default function Home() {

@@ -13,9 +13,14 @@ export default function Partnerscomponent() {
                     <a href={msg.link}>
                         <div className="ml-4 mr-4 mt-4 mb-4 text-white">
                             <div className="flex justify-center items-center">
-                                <img src={msg.pic} height="200" width="200"></img>
+                                <img
+                                    className="border-2 border-white rounded-2xl outline-2"
+                                    src={msg.pic}
+                                    height="100"
+                                    width="100"
+                                ></img>
                             </div>
-                            <div className="font-bold text-2xl">{msg.name}</div>
+                            <div className="font-bold text-1xl">{msg.name}</div>
                         </div>
                     </a>
                 </div>
