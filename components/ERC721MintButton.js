@@ -129,8 +129,8 @@ export default function ERC721MintButton(props) {
                 setvalue("0.9")
             }
             if (mintNum == 10) {
-                setprice(ethers.utils.parseEther("0.10"))
-                setvalue("0.10")
+                setprice(ethers.utils.parseEther("1"))
+                setvalue("1")
             }
         }
     }, [mintNum])
