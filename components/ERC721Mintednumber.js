@@ -31,16 +31,16 @@ export default function ERC721Mintednumber(props) {
         }
     }, [maxSupplydata])
     return (
-        <div class="flex justify-center ...">
+        <div className="flex justify-center ...">
             {/* <div> */}
-            <table class="border-separate border-spacing-2 ...">
+            <table className="border-separate border-spacing-2 ...">
                 <tbody>
                     <tr>
-                        <td class="font-light">Minted</td>
-                        <td class="font-bold">{tsupply}</td>
-                        <td class="font-light">/</td>
-                        <td class="font-light">MaxSupply</td>
-                        <td class="font-bold">{msupply}</td>
+                        <td className="font-light">Minted</td>
+                        <td className="font-bold">{tsupply}</td>
+                        <td className="font-light">/</td>
+                        <td className="font-light">MaxSupply</td>
+                        <td className="font-bold">{msupply}</td>
                     </tr>
                 </tbody>
             </table>

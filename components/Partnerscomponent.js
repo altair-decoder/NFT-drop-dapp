@@ -33,8 +33,8 @@ export default function Partnerscomponent() {
             <div className="mt-8 grid 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-10 items-center justify-center text-center">
                 {partnerInfo}
             </div>
-            <div class="relative h-8 ...">
-                <div class="absolute inset-x-0 bottom-0 h-4 ..."></div>
+            <div className="relative h-8 ...">
+                <div className="absolute inset-x-0 bottom-0 h-4 ..."></div>
             </div>
         </div>
     )
