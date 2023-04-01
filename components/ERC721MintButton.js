@@ -18,6 +18,38 @@ export default function ERC721MintButton(props) {
     const [mintCountdata, setmintCountdata] = useState(0)
     const { addToast } = useToasts()
     const { address } = useAccount()
+    const [mintLimit, setMintLimit] = useState("0")
+    const [mintCostAmount, setMintCostAmount] = useState("0")
+    const { data: mintLimitData } = useContractRead({
+        addressOrName: props.contractaddress,
+        contractInterface: abiJson.abi,
+        chains: props.chainid,
+        functionName: "maxMintAmountPerTx",
+        watch: true,
+    })
+    useEffect(() => {
+        if (mintLimitData) {
+            setMintLimit(mintLimitData.toString())
+        }
+    }, [mintLimitData])
+
+    // mint Cost
+    const { data: mintCostData } = useContractRead({
+        addressOrName: props.contractaddress,
+        contractInterface: abiJson.abi,
+        chains: props.chainid,
+        functionName: "mintCost",
+        watch: true,
+    })
+    useEffect(() => {
+        if (mintCostData) {
+            // console.log(mintCostData.toString())
+            // console.log(ethers.utils.formatEther(mintCostData).toString() * 2)
+            setMintCostAmount(mintCostData.toString())
+        }
+    }, [mintCostData])
+
+    // mint Count
     const { data: mintCount } = useContractRead({
         addressOrName: props.contractaddress,
         contractInterface: abiJson.abi,
@@ -74,14 +106,14 @@ export default function ERC721MintButton(props) {
     }
     function increase() {
         if (mintNum + 1 < 11) {
-            if (mintNum >= 10 - mintCountdata) {
-                addToast("Exceed Maximum Mint Number", { appearance: "error" })
+            if (mintNum >= mintLimit - mintCountdata) {
+                addToast("Exceed Mint Limit", { appearance: "error" })
             } else {
                 setmintNum(mintNum + 1)
                 if (mintNum == 1) setprice(ethers.utils.parseEther("0.1"))
             }
         } else {
-            addToast("Exceed Maximum Mint Number", { appearance: "error" })
+            addToast("Exceed Mint Limit", { appearance: "error" })
         }
     }
     function decrease() {
@@ -92,53 +124,72 @@ export default function ERC721MintButton(props) {
     }
     useEffect(() => {
         if (mintNum) {
-            if (mintNum == 1) {
-                setprice(ethers.utils.parseEther("0.1"))
-                setvalue("0.1")
-            }
-            if (mintNum == 2) {
-                setprice(ethers.utils.parseEther("0.2"))
-                setvalue("0.2")
-            }
-            if (mintNum == 3) {
-                setprice(ethers.utils.parseEther("0.3"))
-                setvalue("0.3")
-            }
-            if (mintNum == 4) {
-                setprice(ethers.utils.parseEther("0.4"))
-                setvalue("0.4")
-            }
-            if (mintNum == 5) {
-                setprice(ethers.utils.parseEther("0.5"))
-                setvalue("0.5")
-            }
-            if (mintNum == 6) {
-                setprice(ethers.utils.parseEther("0.6"))
-                setvalue("0.6")
-            }
-            if (mintNum == 7) {
-                setprice(ethers.utils.parseEther("0.7"))
-                setvalue("0.7")
-            }
-            if (mintNum == 8) {
-                setprice(ethers.utils.parseEther("0.8"))
-                setvalue("0.8")
-            }
-            if (mintNum == 9) {
-                setprice(ethers.utils.parseEther("0.9"))
-                setvalue("0.9")
-            }
-            if (mintNum == 10) {
-                setprice(ethers.utils.parseEther("1"))
-                setvalue("1")
-            }
+            setprice((mintCostAmount * mintNum).toString())
+            setvalue((ethers.utils.formatEther(mintCostAmount) * mintNum).toString())
+
+            // if (mintNum == 1) {
+            //     // mintCostAmount
+            //     setprice(ethers.utils.parseEther("0.1"))
+            //     setvalue("0.1")
+            // }
+            // if (mintNum == 2) {
+            //     setprice(ethers.utils.parseEther("0.2"))
+            //     setvalue("0.2")
+            // }
+            // if (mintNum == 3) {
+            //     setprice(ethers.utils.parseEther("0.3"))
+            //     setvalue("0.3")
+            // }
+            // if (mintNum == 4) {
+            //     setprice(ethers.utils.parseEther("0.4"))
+            //     setvalue("0.4")
+            // }
+            // if (mintNum == 5) {
+            //     setprice(ethers.utils.parseEther("0.5"))
+            //     setvalue("0.5")
+            // }
+            // if (mintNum == 6) {
+            //     setprice(ethers.utils.parseEther("0.6"))
+            //     setvalue("0.6")
+            // }
+            // if (mintNum == 7) {
+            //     setprice(ethers.utils.parseEther("0.7"))
+            //     setvalue("0.7")
+            // }
+            // if (mintNum == 8) {
+            //     setprice(ethers.utils.parseEther("0.8"))
+            //     setvalue("0.8")
+            // }
+            // if (mintNum == 9) {
+            //     setprice(ethers.utils.parseEther("0.9"))
+            //     setvalue("0.9")
+            // }
+            // if (mintNum == 10) {
+            //     setprice(ethers.utils.parseEther("1"))
+            //     setvalue("1")
+            // }
         }
     }, [mintNum])
     return (
         <div>
             {address && (
                 <div>
-                    <div className="">You Minted {mintCountdata} / Max Mint Count 10</div>
+                    {/* <div className="">You Minted {mintCountdata} / Max Mint 10</div> */}
+                    <div class="flex justify-center ...">
+                        {/* <div> */}
+                        <table class="border-separate border-spacing-2 ...">
+                            <tbody>
+                                <tr>
+                                    <td class="font-light">You Minted</td>
+                                    <td class="font-bold">{mintCountdata}</td>
+                                    <td class="font-bold">/</td>
+                                    <td class="font-light">Max Mint</td>
+                                    <td class="font-bold">{mintLimit}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        {/* </div> */}
+                    </div>
 
                     <div className="mt-8 grid grid-cols-3 gap-5 items-center justify-center text-center">
                         <button className={styles.mintButton} onClick={decrease}>
@@ -156,7 +207,7 @@ export default function ERC721MintButton(props) {
                         </button>
                     ) : (
                         <button className={styles.mintButton} onClick={mint}>
-                            You will pay {value} {props.symbol} to mint
+                            Amount {value} {props.symbol} to mint
                         </button>
                     )}
                     <div className="mt-4 grid grid-cols-2 gap-30">

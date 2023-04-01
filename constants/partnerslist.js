@@ -11,4 +11,10 @@ export const partnerlist = [
         link: "https://goerli.net/",
         pic: "https://s2.coinmarketcap.com/static/img/coins/200x200/23669.png",
     },
+    {
+        id: "3",
+        name: "vercel",
+        link: "https://vercel.com/",
+        pic: "https://karmanivero.us/assets/images/logo-vercel.png",
+    },
 ]
