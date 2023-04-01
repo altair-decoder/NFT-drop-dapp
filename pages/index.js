@@ -7,7 +7,7 @@ export default function Home() {
             <Head>
                 <title>NftDrop Testnet</title>
                 <meta name="description" content="Goerli testnet minting site" />
-                <link rel="icon" href="/Cjdowner-Cryptocurrency-Flat-Ethereum-ETH.ico" />
+                <link rel="icon" href="/nftdroptest.ico" />
             </Head>
             <Header />
             <Welcome />
