@@ -33,6 +33,16 @@ export const erc721goerli = [
         id: 3,
         chain: 5,
         symbol: "eth",
+        name: "Hoshiboshi Goerli",
+        address: "0x7EC76fe33585240A5E417945f461daAf63593C9a",
+        pic: "https://i.seadn.io/gcs/files/3fe7db6e009071c897813977dbc04eeb.gif?auto=format&w=256",
+        scan: "https://goerli.etherscan.io/address/",
+        opensea: "hoshiboshi-goerli",
+    },
+    {
+        id: 4,
+        chain: 5,
+        symbol: "eth",
         name: "Colorful Ape Club Goerli",
         address: "0xB58F94297c244694983fe2CE7f63CeE4329edc56",
         pic: "https://i.seadn.io/gae/KbWlmQxPV7dH0WysETwd_V8hT_3yVbR_dgvuFL1o9ppLWYAqCGgAKqtN9peUFteiJop78D6DbD5OMi_JaRVJFQ-gQi68SIAKOVKa6A?auto=format&w=256",
@@ -40,7 +50,7 @@ export const erc721goerli = [
         opensea: "colorful-ape-club-goerli",
     },
     {
-        id: 4,
+        id: 5,
         chain: 5,
         symbol: "eth",
         name: "MutanAI Goerli",
@@ -50,7 +60,7 @@ export const erc721goerli = [
         opensea: "mutanai-goerli",
     },
     {
-        id: 5,
+        id: 6,
         chain: 5,
         symbol: "eth",
         name: "Rare Ape Yacht Club Goerli",
@@ -60,7 +70,7 @@ export const erc721goerli = [
         opensea: "rare-ape-yacht-club-goerli",
     },
     {
-        id: 6,
+        id: 7,
         chain: 5,
         symbol: "eth",
         name: "Yeets Goerli Yact",
