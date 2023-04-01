@@ -239,7 +239,7 @@ export default function ERC721MintButton(props) {
             )}
             {!address && (
                 <div>
-                    <div className="">You Minted ? / Max Mint Count 10</div>
+                    <div className="">You Minted ? / Mint Limit {mintLimit}</div>
 
                     <div className="mt-8  grid grid-cols-3 gap-5 items-center justify-center text-center">
                         <button className={styles.mintButton} onClick={connectwalletnotice}>
