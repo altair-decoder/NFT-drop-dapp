@@ -69,4 +69,14 @@ export const erc721goerli = [
         scan: "https://goerli.etherscan.io/address/",
         opensea: "yeets-goerli-yact",
     },
+    // {
+    //     id: 7,
+    //     chain: 5,
+    //     symbol: "eth",
+    //     name: "DeadFellaz Goerli",
+    //     address: "0x76FB8280c4eb971496506BB0B46a4665b38E3Fb8",
+    //     pic: "https://i.seadn.io/gae/seJEwLWJP3RAXrxboeG11qbc_MYrxwVrsxGH0s0qxvF68hefOjf5qrPSKkIknUTYzfvinOUPWbYBdM8VEtGEE980Qv2ti_GGd86OWQ?auto=format&w=256",
+    //     scan: "https://goerli.etherscan.io/address/",
+    //     opensea: "deadfellaz-goerli",
+    // },
 ]
