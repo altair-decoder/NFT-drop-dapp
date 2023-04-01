@@ -33,11 +33,11 @@ export const erc721goerli = [
         id: 3,
         chain: 5,
         symbol: "eth",
-        name: "Hoshiboshi Goerli",
+        name: "Hoshiboshi Aries",
         address: "0x7EC76fe33585240A5E417945f461daAf63593C9a",
         pic: "https://i.seadn.io/gcs/files/3fe7db6e009071c897813977dbc04eeb.gif?auto=format&w=256",
         scan: "https://goerli.etherscan.io/address/",
-        opensea: "hoshiboshi-goerli",
+        opensea: "hoshiboshi-aries",
     },
     {
         id: 4,
