@@ -43,8 +43,6 @@ export default function ERC721MintButton(props) {
     })
     useEffect(() => {
         if (mintCostData) {
-            // console.log(mintCostData.toString())
-            // console.log(ethers.utils.formatEther(mintCostData).toString() * 2)
             setMintCostAmount(mintCostData.toString())
         }
     }, [mintCostData])

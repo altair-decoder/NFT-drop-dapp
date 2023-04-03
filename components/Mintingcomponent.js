@@ -97,7 +97,7 @@ export default function Mintingcomponent() {
                     className="ml-4 mr-4 mt-4 mb-4 text-white font-Prompt rounded-2xl outline-dashed shadow-lg shadow-indigo-500/50"
                 >
                     <div className="ml-4 mr-4 mt-4 mb-4">
-                        <div className="ml-4 mr-4 mt-4 mb-4">{msg.name}</div>
+                        <div className="ml-4 mr-4 mt-4 mb-4 text-md font-semibold">{msg.name}</div>
                         <div className="flex justify-center items-center">
                             <img
                                 className="border-2 border-white rounded-2xl outline-2 mb-3"
