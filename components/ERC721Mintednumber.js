@@ -47,30 +47,25 @@ export default function ERC721Mintednumber(props) {
         }
     }, [mintCostData])
     return (
-        <div className="flex justify-center ...">
-            {/* <div> */}
-            <table className="border-separate border-spacing-2 ...">
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        {/* <td className="font-light text-sm">MintCost</td> */}
-                        <td className="font-bold text-sm text-slate-700 border-2 rounded">
-                            {ethers.utils.formatEther(mintCostAmount).toString()} eth / item
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="font-light text-sm">Minted</td>
-                        <td className="font-bold text-sm">{tsupply}</td>
-                        <td className="font-light text-sm">/</td>
-                        <td className="font-light text-sm">MaxSupply</td>
-                        <td className="font-bold text-sm">{msupply}</td>
-                    </tr>
-                </tbody>
-            </table>
-            {/* </div> */}
+        <div>
+            <div className="flex justify-center outline-dashed rounded-2xl ...">
+                <div className="font-bold text-sm text-slate-700 ">
+                    {ethers.utils.formatEther(mintCostAmount).toString()} ethers/item
+                </div>
+            </div>
+            <div className="flex justify-center ...">
+                <table className="border-separate border-spacing-2 ...">
+                    <tbody>
+                        <tr>
+                            <td className="font-light text-sm">Minted</td>
+                            <td className="font-bold text-sm">{tsupply}</td>
+                            <td className="font-light text-sm">/</td>
+                            <td className="font-light text-sm">MaxSupply</td>
+                            <td className="font-bold text-sm">{msupply}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

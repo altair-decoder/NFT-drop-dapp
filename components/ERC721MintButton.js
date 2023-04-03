@@ -172,21 +172,18 @@ export default function ERC721MintButton(props) {
         <div>
             {address && (
                 <div>
-                    {/* <div className="">You Minted {mintCountdata} / Max Mint 10</div> */}
                     <div className="flex justify-center ...">
-                        {/* <div> */}
                         <table className="border-separate border-spacing-2 ...">
                             <tbody>
                                 <tr>
-                                    <td className="font-light">You Minted</td>
-                                    <td className="font-bold">{mintCountdata}</td>
-                                    <td className="font-bold">/</td>
-                                    <td className="font-light">Max Mint</td>
-                                    <td className="font-bold">{mintLimit}</td>
+                                    <td className="font-light text-sm">You Minted</td>
+                                    <td className="font-bold text-sm">{mintCountdata}</td>
+                                    <td className="font-bold text-sm">/</td>
+                                    <td className="font-light text-sm">Max Mint</td>
+                                    <td className="font-bold text-sm">{mintLimit}</td>
                                 </tr>
                             </tbody>
                         </table>
-                        {/* </div> */}
                     </div>
 
                     <div className="mt-8 grid grid-cols-3 gap-5 items-center justify-center text-center">
