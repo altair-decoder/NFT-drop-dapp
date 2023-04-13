@@ -99,4 +99,14 @@ export const erc721goerli = [
         scan: "https://goerli.etherscan.io/address/",
         opensea: "quirkies-goerli",
     },
+    {
+        id: 7,
+        chain: 5,
+        symbol: "eth",
+        name: "MPunks",
+        address: "0x05fa539739B7C02F6C57D3d858bE63427ff9A37c",
+        pic: "https://i.seadn.io/gae/V2BZiBggsYYsOSrqW0Jx94pxALGZLYajG0Ac9vVBnJl-BaShs4bisK5iOz33vcl0JN_xGmgDM-OXjRgoRyyR1jJ17zUU00POAxu_pAY?auto=format&w=256",
+        scan: "https://goerli.etherscan.io/address/",
+        opensea: "minepunks",
+    },
 ]
