@@ -20,7 +20,7 @@ import {
 } from "@rainbow-me/rainbowkit/wallets"
 
 const { chains, provider } = configureChains(
-    [chain.mainnet, chain.goerli, chain.polygonMumbai],
+    [chain.mainnet],
     [
         alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMYAPIKEY1, priority: 0 }),
         alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMYAPIKEY2, priority: 0 }),
