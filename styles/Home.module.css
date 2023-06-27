@@ -4,8 +4,12 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    background-color: rgb(74 77 175);
+    background-color: #00023b;
 }
+.imgFlappy{
+    width: 24px;
+    height: 24px;
+    src: '../public/FlappyOwl50.ico'}
 
 .bg-alchemy {
     background: linear-gradient(267.45deg, #05d5ff -34.23%, #53f 99.39%);

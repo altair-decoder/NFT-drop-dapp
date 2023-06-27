@@ -35,6 +35,17 @@ export default function Mintingcomponent() {
     }, [])
     useEffect(() => {
         if (chain) {
+            if (chain["id"] == 1) {
+                if (collectiontype == 1) {
+                    pullerc721Json(erc721goerli)
+                }
+                if (collectiontype == 2) {
+                    pullerc1155Json(erc1155goerli)
+                }
+                if (collectiontype == 3) {
+                    pullerc4907Json(erc4907goerli)
+                }
+            }
             if (chain["id"] == 5) {
                 if (collectiontype == 1) {
                     pullerc721Json(erc721goerli)
@@ -62,6 +73,18 @@ export default function Mintingcomponent() {
     useEffect(() => {
         if (switchNetwork) {
             setchainnow(chain["id"])
+            if (chain["id"] == 1) {
+                if (collectiontype == 1) {
+                    pullerc721Json(erc721goerli)
+                }
+                if (collectiontype == 2) {
+                    pullerc1155Json(erc1155goerli)
+                }
+                if (collectiontype == 3) {
+                    pullerc4907Json(erc4907goerli)
+                }
+                // console.log(1)
+            }
             if (chain["id"] == 5) {
                 if (collectiontype == 1) {
                     pullerc721Json(erc721goerli)
@@ -171,7 +194,7 @@ export default function Mintingcomponent() {
     return (
         <div>
             <div>
-                <div className="mt-8 grid 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-40 items-center justify-center text-center">
+                <div className="mt-8 grid 2xl:grid-cols-1 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-40 items-center justify-center text-center">
                     {messagejson}
                 </div>
             </div>

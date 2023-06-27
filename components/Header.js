@@ -6,7 +6,8 @@ export default function Header() {
             <nav className={styles.navBar}>
                 <div className="flex items-center ">
                     <div className="text-white font-bold font-Rubik lg:text-2xl sm:text-lg">
-                        NFT Drop Testnet
+                        {/* <img className={styles.imgFlappy}></img> */}
+                        FlappyOwl
                     </div>
                 </div>
                 <ConnectButton

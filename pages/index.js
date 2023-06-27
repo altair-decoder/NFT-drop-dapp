@@ -5,9 +5,9 @@ export default function Home() {
     return (
         <div>
             <Head>
-                <title>NftDrop Testnet</title>
-                <meta name="description" content="Goerli testnet minting site" />
-                <link rel="icon" href="/nftdroptest.ico" />
+                <title>FlappyOwl || Collections</title>
+                <meta name="description" content="official flappyOwl minting site" />
+                <link rel="icon" href="/FlappyOwl50.ico" />
             </Head>
             <Header />
             <Welcome />

@@ -18,18 +18,19 @@ export default function ERC721MintButton(props) {
     const [mintCountdata, setmintCountdata] = useState(0)
     const { addToast } = useToasts()
     const { address } = useAccount()
-    const [mintLimit, setMintLimit] = useState("0")
+    const [mintLimit, setMintLimit] = useState("21")
     const [mintCostAmount, setMintCostAmount] = useState("0")
     const { data: mintLimitData } = useContractRead({
         addressOrName: props.contractaddress,
         contractInterface: abiJson.abi,
         chains: props.chainid,
-        functionName: "maxMintAmountPerTx",
+        functionName: "maxMintPerWallet",
         watch: true,
     })
     useEffect(() => {
         if (mintLimitData) {
-            setMintLimit(mintLimitData.toString())
+            setMintLimit("21")
+            // setMintLimit(mintLimitData.toString())
         }
     }, [mintLimitData])
 

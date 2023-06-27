@@ -30,7 +30,7 @@ export default function Partnerscomponent() {
     }
     return (
         <div>
-            <div className="mt-8 grid 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-10 items-center justify-center text-center">
+            <div className="mt-8 grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10 items-center justify-center text-center">
                 {partnerInfo}
             </div>
             <div className="relative h-8 ...">
