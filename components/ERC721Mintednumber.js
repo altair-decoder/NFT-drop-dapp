@@ -3,9 +3,23 @@ import abiJson from "../constants/erc721abi.json"
 import { useContractRead } from "wagmi"
 import { ethers } from "ethers"
 export default function ERC721Mintednumber(props) {
-    const [msupply, setMsupply] = useState("10000")
+    const [msupply, setMsupply] = useState("0")
+    const [isOwner, setOwner] = useState(false)
     const [tsupply, setTsupply] = useState("0")
     const [mintCostAmount, setMintCostAmount] = useState("0")
+    const { data: contractOwnerData } = useContractRead({
+        addressOrName: props.contractaddress,
+        contractInterface: abiJson.abi,
+        chains: props.chainid,
+        functionName: "owner",
+        watch: true,
+    })
+    useEffect(() => {
+        if (contractOwnerData) {
+            console.log(contractOwnerData.toString())
+            // setOwner(true)
+        }
+    }, [isOwner])
     const { data: totalSupplydata } = useContractRead({
         addressOrName: props.contractaddress,
         contractInterface: abiJson.abi,

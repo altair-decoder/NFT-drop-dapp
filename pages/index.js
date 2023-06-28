@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <div>
             <Head>
-                <title>FlappyOwl || Collections</title>
+                <title>FlappyOwl ascii art fully onchain nfts</title>
                 <meta name="description" content="official flappyOwl minting site" />
                 <link rel="icon" href="/FlappyOwl50.ico" />
             </Head>
