@@ -1,12 +1,18 @@
 import Mintingcomponent from "./Mintingcomponent"
 import Partnerscomponent from "./Partnerscomponent"
 import { useState, useEffect } from "react"
-import { useNetwork } from "wagmi"
+import { useAccount, useNetwork } from "wagmi"
+import { erc721goerli } from "../constants/erc721goerli"
 
 export default function Welcome() {
     const { chain } = useNetwork()
+    const { address } = useAccount()
 
-    const [chainnow, setchainnow] = useState("Goerli")
+    const [owner, setOwner] = useState(false)
+    useEffect(() => {
+        // console.log(address)
+    }, [owner])
+    const [chainnow, setchainnow] = useState("Ethereum")
     useEffect(() => {
         if (chain) {
             if (chain["id"] == 1) {
@@ -19,7 +25,7 @@ export default function Welcome() {
                 setchainnow(chain["name"])
             }
         }
-    }, [chain])
+    }, [chain, chainnow])
 
     return (
         <div className="scroll-smooth">
@@ -31,7 +37,9 @@ export default function Welcome() {
                             Wellcome To The Club
                         </h1>
                         <h1 className="mt-5 ml-11 mr-11 font-Rubik lg:text-2xl md:text-md sm:text-sm font-light text-white">
-                        "Flappy Owl is ascii art fully onchain nfts use ERC721A based for gasless transaction, uniquely generated and stored on the blockchain forever, No IPFS or external storage"
+                            "Flappy Owl is ascii art fully onchain nfts use ERC721A based for
+                            gasless transaction, uniquely generated and stored on the blockchain
+                            forever, No IPFS or external storage"
                         </h1>
                     </div>
                     <hr />

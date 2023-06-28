@@ -18,7 +18,7 @@ export default function ERC721MintButton(props) {
     const [mintCountdata, setmintCountdata] = useState(0)
     const { addToast } = useToasts()
     const { address } = useAccount()
-    const [mintLimit, setMintLimit] = useState("21")
+    const [mintLimit, setMintLimit] = useState(0)
     const [mintCostAmount, setMintCostAmount] = useState("0")
     const { data: mintLimitData } = useContractRead({
         addressOrName: props.contractaddress,
@@ -29,10 +29,10 @@ export default function ERC721MintButton(props) {
     })
     useEffect(() => {
         if (mintLimitData) {
-            setMintLimit("21")
-            // setMintLimit(mintLimitData.toString())
+            // setMintLimit("21")
+            setMintLimit(mintLimitData.toString())
         }
-    }, [mintLimitData])
+    }, [mintLimit])
 
     // mint Cost
     const { data: mintCostData } = useContractRead({
@@ -217,10 +217,7 @@ export default function ERC721MintButton(props) {
                                 ></Image>
                             </button>
                         </a>
-                        <a
-                            target="_blank"
-                            href={`https://testnets.opensea.io/collection/${props.opensea}`}
-                        >
+                        <a target="_blank" href={`https://opensea.io/collection/${props.opensea}`}>
                             <button className="">
                                 <Image
                                     src="/opensea.png"
@@ -261,10 +258,7 @@ export default function ERC721MintButton(props) {
                                 ></Image>
                             </button>
                         </a>
-                        <a
-                            target="_blank"
-                            href={`https://testnets.opensea.io/collection/${props.opensea}`}
-                        >
+                        <a target="_blank" href={`https://opensea.io/collection/${props.opensea}`}>
                             <button className="">
                                 <Image
                                     src="/opensea.png"
