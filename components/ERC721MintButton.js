@@ -104,7 +104,7 @@ export default function ERC721MintButton(props) {
         addToast("Mint number could not be 0", { appearance: "error" })
     }
     function increase() {
-        if (mintNum + 1 < 11) {
+        if (mintNum + 1 < mintLimit + 1) {
             if (mintNum >= mintLimit - mintCountdata) {
                 addToast("Exceed Mint Limit", { appearance: "error" })
             } else {
