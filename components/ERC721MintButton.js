@@ -135,11 +135,11 @@ export default function ERC721MintButton(props) {
                         <table className="border-separate border-spacing-2 ...">
                             <tbody>
                                 <tr>
-                                    <td className="font-light text-sm">You Minted</td>
-                                    <td className="font-bold text-sm">{mintCountdata}</td>
-                                    <td className="font-bold text-sm">/</td>
-                                    <td className="font-light text-sm">Max Mint</td>
-                                    <td className="font-bold text-sm">{mintLimit}</td>
+                                    <td className="font-light xs:text-[8.5px] sm:text-[10px]">You Minted</td>
+                                    <td className="font-bold xs:text-[8.5px] sm:text-[10px]">{mintCountdata}</td>
+                                    <td className="font-bold xs:text-[8.5px] sm:text-[10px]">/</td>
+                                    <td className="font-light xs:text-[8.5px] sm:text-[10px]">Max Mint</td>
+                                    <td className="font-bold xs:text-[8.5px] sm:text-[10px]">{mintLimit}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -154,14 +154,14 @@ export default function ERC721MintButton(props) {
                             +
                         </button>
                     </div>
-                    <div className="mt-2" />
+                    <div className="mt-2 xs:text-[8px] sm:text-[10px]" />
                     {mintNum == 0 ? (
                         <button className={styles.mintButton} onClick={zeromintnum}>
                             mint
                         </button>
                     ) : (
                         <button className={styles.mintButton} onClick={mint}>
-                            Amount {value} {props.symbol} to mint
+                            {value} {props.symbol}
                         </button>
                     )}
                     <div className="mt-4 grid grid-cols-2 gap-30">
@@ -190,7 +190,7 @@ export default function ERC721MintButton(props) {
             )}
             {!address && (
                 <div>
-                    <div className="">You Minted ? / Mint Limit {mintLimit}</div>
+                    <div className="xs:text-[8px] sm:text-[10px]">You Minted ? / Mint Limit {mintLimit}</div>
 
                     <div className="mt-8  grid grid-cols-3 gap-5 items-center justify-center text-center">
                         <button className={styles.mintButton} onClick={connectwalletnotice}>
@@ -201,7 +201,7 @@ export default function ERC721MintButton(props) {
                             +
                         </button>
                     </div>
-                    <div className="mt-2" />
+                    <div className="mt-2 xs:text-[8px] sm:text-[10px]" />
                     <button className={styles.mintButton} onClick={connectwalletnotice}>
                         mint
                     </button>

@@ -20,7 +20,7 @@ export default function Partnerscomponent() {
                                     width="100"
                                 ></img>
                             </div>
-                            <div className="font-bold text-1xl">{msg.name}</div>
+                            <div className="text-sm">{msg.name}</div>
                         </div>
                     </a>
                 </div>
@@ -30,7 +30,7 @@ export default function Partnerscomponent() {
     }
     return (
         <div>
-            <div className="mt-8 grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10 items-center justify-center text-center">
+            <div className="mt-8 mb-[4.9rem] grid 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-10 items-center justify-center text-center">
                 {partnerInfo}
             </div>
             <div className="relative h-8 ...">

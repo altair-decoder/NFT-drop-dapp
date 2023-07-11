@@ -117,16 +117,17 @@ export default function Mintingcomponent() {
             return (
                 <div
                     key={msg.id}
-                    className="ml-4 mr-4 mt-4 mb-4 text-white font-Prompt rounded-2xl outline-dashed shadow-lg shadow-indigo-500/50"
+                    className="ml-4 mr-4 mt-4 mb-4 text-[#a6ff00] rounded-2xl outline-dashed"
+                    // className="ml-4 mr-4 mt-4 mb-4 text-[#a6ff00] font-Prompt rounded-2xl outline-dashed shadow-lg shadow-indigo-500/50"
                 >
                     <div className="ml-4 mr-4 mt-4 mb-4">
-                        <div className="ml-4 mr-4 mt-4 mb-4 text-md font-semibold">{msg.name}</div>
+                        <div className="ml-4 mr-4 mt-4 mb-4 text-md font-semibold text-[#a6ff00]">{msg.name}</div>
                         <div className="flex justify-center items-center">
                             <img
-                                className="border-2 border-white rounded-2xl outline-2 mb-3"
+                                className="border-2 border-[#a6ff00] rounded-2xl outline-2 mb-3 xs:h-[240px] xs:w-[240px] sm:h-[300px] sm:w-[300px]"
                                 src={msg.pic}
-                                height="300"
-                                width="300"
+                                // height="300"
+                                // width="300"
                             ></img>
                         </div>
                         <ERC721Mintednumber contractaddress={msg.address} chainid={msg.chain} />

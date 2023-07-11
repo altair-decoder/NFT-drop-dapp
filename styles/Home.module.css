@@ -4,12 +4,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    background-color: #00023b;
+    background-color: #041421;
 }
-.imgFlappy{
+.imgFlappy {
     width: 24px;
     height: 24px;
-    src: '../public/FlappyOwl50.ico'}
+    src: "../public/FlappyOwl50.ico";
+}
 
 .bg-alchemy {
     background: linear-gradient(267.45deg, #05d5ff -34.23%, #53f 99.39%);
@@ -21,7 +22,9 @@
 .container {
     padding: 0 2rem;
 }
-
+.brand-name {
+    font-size: 1rem;
+}
 .main {
     min-height: 100vh;
     padding: 4rem 0;
@@ -151,16 +154,17 @@
 .mintButton {
     appearance: none;
     background-color: transparent;
-    border: 1px solid #ffff;
+    border: 1px solid #a6ff00;
     border-radius: 15px;
     box-sizing: border-box;
-    color: #ffff;
+    color: #a6ff00;
     cursor: pointer;
     display: inline-block;
-    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    /* font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
         sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 15px;
-    font-weight: 600;
+     */
+    font-size: 12px;
+    font-weight: 400;
     line-height: normal;
     margin: 0;
     min-height: 60px;
@@ -182,7 +186,7 @@
 }
 
 .mintButton:hover {
-    color: #fff;
+    color: #72b000;
     background-color: #1a1a1a;
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);

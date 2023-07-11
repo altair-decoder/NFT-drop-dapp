@@ -63,7 +63,8 @@ export default function ERC721Mintednumber(props) {
     return (
         <div>
             <div className="flex justify-center outline-dashed rounded-2xl ...">
-                <div className="font-bold text-sm animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black">
+                <div className="p-2 subpixel-antialiased xs:text-[8px] sm:text-[10px] md:text-[11px] tracking-[1px] text-[##a6ff00">
+                {/* <div className="font-bold text-md animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black"> */}
                     {ethers.utils.formatEther(mintCostAmount).toString()} ethers / flappyowl
                 </div>
             </div>
@@ -71,11 +72,11 @@ export default function ERC721Mintednumber(props) {
                 <table className="border-separate border-spacing-2 ...">
                     <tbody>
                         <tr>
-                            <td className="font-light text-sm">Minted</td>
-                            <td className="font-bold text-sm">{tsupply}</td>
-                            <td className="font-light text-sm">/</td>
-                            <td className="font-light text-sm">MaxSupply</td>
-                            <td className="font-bold text-sm">{msupply}</td>
+                            <td className="font-light xs:text-[8px] sm:text-[10px]">Minted</td>
+                            <td className="font-bold xs:text-[8px] sm:text-[10px]">{tsupply}</td>
+                            <td className="font-light xs:text-[8px] sm:text-[10px]">/</td>
+                            <td className="font-light xs:text-[8px] sm:text-[10px]">MaxSupply</td>
+                            <td className="font-bold xs:text-[8px] sm:text-[10px]">{msupply}</td>
                         </tr>
                     </tbody>
                 </table>

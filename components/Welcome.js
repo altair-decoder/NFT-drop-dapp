@@ -33,10 +33,10 @@ export default function Welcome() {
                 {/* <div className="grid items-center justify-items-center bg-cover bg-gradient-to-r from-indigo-500 via-blue-500 to-sky-400 relative"> */}
                 <div className="grid items-center justify-items-center bg-cover bg-black relative">
                     <div className="mt-8 grid items-center justify-items-center text-center opacity-100 ">
-                        <h1 className="mt-2 font-Rubik lg:text-5xl md:text-4xl sm:text-2xl font-bold text-lime">
+                        {/* <h1 className="mt-2 lg:text-5xl md:text-4xl sm:text-2xl font-bold text-lime">
                             Wellcome To The Club
-                        </h1>
-                        <h1 className="mt-5 ml-11 mr-11 font-Rubik lg:text-2xl md:text-md sm:text-sm font-light text-white">
+                        </h1> */}
+                        <h1 className="mt-5 ml-11 mr-11 lg:text-[16px] md:text-sm sm:text-[10px] xs:text-[8.5px] tracking-normal font-light text-[#a6ff00]">
                             "Flappy Owl is ascii art fully onchain nfts use ERC721A based for
                             gasless transaction, uniquely generated and stored on the blockchain
                             forever, No IPFS or external storage"

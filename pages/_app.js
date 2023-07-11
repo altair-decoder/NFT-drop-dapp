@@ -1,12 +1,12 @@
 import "../styles/globals.css"
 import { WagmiConfig, configureChains, createClient, chain } from "wagmi"
-import { infuraProvider } from "wagmi/providers/infura"
 import { ToastProvider } from "react-toast-notifications"
+import { infuraProvider } from "wagmi/providers/infura"
 import { alchemyProvider } from "wagmi/providers/alchemy"
+import { publicProvider } from "wagmi/providers/public"
 import { RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit"
 import "@rainbow-me/rainbowkit/styles.css"
 import { connectorsForWallets } from "@rainbow-me/rainbowkit"
-import { publicProvider } from "wagmi/providers/public"
 import {
     argentWallet,
     braveWallet,
@@ -50,6 +50,7 @@ const { chains, provider } = configureChains(
         infuraProvider({ apiKey: process.env.NEXT_PUBLIC_INFURAAPIKEY9, priority: 0 }),
         infuraProvider({ apiKey: process.env.NEXT_PUBLIC_INFURAAPIKEY10, priority: 0 }),
         infuraProvider({ apiKey: process.env.NEXT_PUBLIC_INFURAAPIKEY11, priority: 0 }),
+        publicProvider(),
     ],
     { pollingInterval: 90_000, targetQuorum: 1 },
     { stallTimeout: 1000 }
@@ -87,6 +88,7 @@ function MyApp({ Component, pageProps }) {
         <div>
             <WagmiConfig client={WagmiClient}>
                 <RainbowKitProvider
+                    showRecentTransactions={true}
                     chains={chains}
                     theme={darkTheme({
                         accentColor: "#37383b",
