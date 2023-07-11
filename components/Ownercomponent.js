@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import ERC721Mintednumber from "./ERC721Mintednumber"
 import ERC721MintButton from "./ERC721MintButton"
+
+import abiJson from "../constants/erc721abi.json"
 // import ERC1155Mintednumber from "./ERC1155Mintednumber"
 // import ERC1155MintButton from "./ERC1155MintButton"
 // import ERC4907MintButton from "./ERC4907MintButton"
@@ -12,9 +14,17 @@ import { erc1155goerli } from "../constants/erc1155goerli"
 import { erc1155mumbai } from "../constants/erc1155mumbai"
 import { erc4907goerli } from "../constants/erc4907goerli"
 import { erc4907mumbai } from "../constants/erc4907mumbai"
-import { useAccount, useNetwork, useSwitchNetwork } from "wagmi"
+import {
+    usePrepareContractWrite,
+    useAccount,
+    useContractRead,
+    useContractWrite,
+    useWaitForTransaction,
+    useNetwork,
+    useSwitchNetwork,
+} from "wagmi"
 import { useToasts } from "react-toast-notifications"
-export default function Mintingcomponent() {
+export default function Ownercomponent() {
     const { address } = useAccount()
     const { addToast } = useToasts()
     const { chain } = useNetwork()
@@ -22,6 +32,7 @@ export default function Mintingcomponent() {
     const [chainnow, setchainnow] = useState("")
     const [messagejson, setMessagejson] = useState("")
     const { switchNetwork } = useSwitchNetwork()
+
     useEffect(() => {
         if (collectiontype == 1) {
             pullerc721Json(erc721goerli)
@@ -181,9 +192,6 @@ export default function Mintingcomponent() {
     function viewerc721() {
         setcollectiontype(1)
         if (chain) {
-            if (chain["id"] == 1) {
-                pullerc721Json(erc721goerli)
-            }
             if (chain["id"] == 5) {
                 pullerc721Json(erc721goerli)
             }
@@ -197,7 +205,7 @@ export default function Mintingcomponent() {
     return (
         <div>
             <div>
-                <div className="mt-8 grid 2xl:grid-cols-1 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-40 items-center justify-center text-center">
+                <div className="mt-8 grid 2xl:grid-cols-1 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 gap-40 items-center justify-center text-center">
                     {messagejson}
                 </div>
             </div>

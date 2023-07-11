@@ -3,9 +3,23 @@ import abiJson from "../constants/erc721abi.json"
 import { useContractRead } from "wagmi"
 import { ethers } from "ethers"
 export default function ERC721Mintednumber(props) {
-    const [msupply, setMsupply] = useState("10000")
+    const [msupply, setMsupply] = useState("0")
+    const [isOwner, setOwner] = useState(false)
     const [tsupply, setTsupply] = useState("0")
     const [mintCostAmount, setMintCostAmount] = useState("0")
+    const { data: contractOwnerData } = useContractRead({
+        addressOrName: props.contractaddress,
+        contractInterface: abiJson.abi,
+        chains: props.chainid,
+        functionName: "owner",
+        watch: true,
+    })
+    useEffect(() => {
+        if (contractOwnerData) {
+            console.log(contractOwnerData.toString())
+            // setOwner(true)
+        }
+    }, [isOwner])
     const { data: totalSupplydata } = useContractRead({
         addressOrName: props.contractaddress,
         contractInterface: abiJson.abi,
@@ -49,8 +63,8 @@ export default function ERC721Mintednumber(props) {
     return (
         <div>
             <div className="flex justify-center outline-dashed rounded-2xl ...">
-                <div className="font-bold text-sm text-slate-700 ">
-                    {ethers.utils.formatEther(mintCostAmount).toString()} ethers/item
+                <div className="font-bold text-sm animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-black">
+                    {ethers.utils.formatEther(mintCostAmount).toString()} ethers / flappyowl
                 </div>
             </div>
             <div className="flex justify-center ...">

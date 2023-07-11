@@ -18,7 +18,7 @@ export default function ERC721MintButton(props) {
     const [mintCountdata, setmintCountdata] = useState(0)
     const { addToast } = useToasts()
     const { address } = useAccount()
-    const [mintLimit, setMintLimit] = useState("21")
+    const [mintLimit, setMintLimit] = useState(0)
     const [mintCostAmount, setMintCostAmount] = useState("0")
     const { data: mintLimitData } = useContractRead({
         addressOrName: props.contractaddress,
@@ -29,10 +29,10 @@ export default function ERC721MintButton(props) {
     })
     useEffect(() => {
         if (mintLimitData) {
-            setMintLimit("21")
-            // setMintLimit(mintLimitData.toString())
+            // setMintLimit("21")
+            setMintLimit(mintLimitData.toString())
         }
-    }, [mintLimitData])
+    }, [mintLimit])
 
     // mint Cost
     const { data: mintCostData } = useContractRead({
@@ -104,7 +104,7 @@ export default function ERC721MintButton(props) {
         addToast("Mint number could not be 0", { appearance: "error" })
     }
     function increase() {
-        if (mintNum + 1 < 11) {
+        if (mintNum + 1 < mintLimit + 1) {
             if (mintNum >= mintLimit - mintCountdata) {
                 addToast("Exceed Mint Limit", { appearance: "error" })
             } else {
@@ -125,48 +125,6 @@ export default function ERC721MintButton(props) {
         if (mintNum) {
             setprice((mintCostAmount * mintNum).toString())
             setvalue((ethers.utils.formatEther(mintCostAmount) * mintNum).toString())
-
-            // if (mintNum == 1) {
-            //     // mintCostAmount
-            //     setprice(ethers.utils.parseEther("0.1"))
-            //     setvalue("0.1")
-            // }
-            // if (mintNum == 2) {
-            //     setprice(ethers.utils.parseEther("0.2"))
-            //     setvalue("0.2")
-            // }
-            // if (mintNum == 3) {
-            //     setprice(ethers.utils.parseEther("0.3"))
-            //     setvalue("0.3")
-            // }
-            // if (mintNum == 4) {
-            //     setprice(ethers.utils.parseEther("0.4"))
-            //     setvalue("0.4")
-            // }
-            // if (mintNum == 5) {
-            //     setprice(ethers.utils.parseEther("0.5"))
-            //     setvalue("0.5")
-            // }
-            // if (mintNum == 6) {
-            //     setprice(ethers.utils.parseEther("0.6"))
-            //     setvalue("0.6")
-            // }
-            // if (mintNum == 7) {
-            //     setprice(ethers.utils.parseEther("0.7"))
-            //     setvalue("0.7")
-            // }
-            // if (mintNum == 8) {
-            //     setprice(ethers.utils.parseEther("0.8"))
-            //     setvalue("0.8")
-            // }
-            // if (mintNum == 9) {
-            //     setprice(ethers.utils.parseEther("0.9"))
-            //     setvalue("0.9")
-            // }
-            // if (mintNum == 10) {
-            //     setprice(ethers.utils.parseEther("1"))
-            //     setvalue("1")
-            // }
         }
     }, [mintNum])
     return (
@@ -217,10 +175,7 @@ export default function ERC721MintButton(props) {
                                 ></Image>
                             </button>
                         </a>
-                        <a
-                            target="_blank"
-                            href={`https://testnets.opensea.io/collection/${props.opensea}`}
-                        >
+                        <a target="_blank" href={`https://opensea.io/collection/${props.opensea}`}>
                             <button className="">
                                 <Image
                                     src="/opensea.png"
@@ -261,10 +216,7 @@ export default function ERC721MintButton(props) {
                                 ></Image>
                             </button>
                         </a>
-                        <a
-                            target="_blank"
-                            href={`https://testnets.opensea.io/collection/${props.opensea}`}
-                        >
+                        <a target="_blank" href={`https://opensea.io/collection/${props.opensea}`}>
                             <button className="">
                                 <Image
                                     src="/opensea.png"
