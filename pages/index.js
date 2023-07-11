@@ -12,10 +12,10 @@ export default function Home() {
                     property="og:description"
                     content="🎉️ Mint Price: 0.005Eth | 🎉️ MaxSupply:21000 | 🎉️Twitter: @FlappyOwlNft"
                 />
-                <meta property="og:image" content="https://flappyowl.vercel.app/FlappyOwl50.ico" />
+                <meta property="og:image" content="https://flappyowl.vercel.app/newPict400x400-2.png" />
                 <meta property="og:url" content="https://opensea.io/collection/flappyowl" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <link rel="icon" href="/FlappyOwl50.ico" />
+                <link rel="icon" href="/newPict128x128-3.ico" />
             </Head>
             <Header />
             <Welcome />
