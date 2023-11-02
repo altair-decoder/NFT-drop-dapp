@@ -33,7 +33,7 @@ export default function Home() {
                 <meta
                     name="keywords"
                     content="NFT,FlappyOwl NFT,Ethereum,Crypto,Opensea,Flappyowl,Onchain Nft"
-                ></meta>
+                />
                 <meta
                     property="og:image"
                     content="https://flappyowl.vercel.app/newPict400x400-2.png"
