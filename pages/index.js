@@ -1,25 +1,6 @@
 import Head from "next/head"
 import Header from "../components/Header"
 import Welcome from "../components/Welcome"
-// export const metadata = {
-//     title: "FlappyOwl NFT",
-//     keywords: [
-//         "NFT",
-//         "FlappyOwl NFT",
-//         "Ethereum",
-//         "Crypto",
-//         "Opensea",
-//         "Flappyowl",
-//         "Onchain Nft",
-//     ],
-//     twitter: {
-//         card: "summary_large_image",
-//         title: "FlappyOwl || Ascii art nft collections.",
-//         description: "🎉️ Mint Price: 0.005Eth | 🎉️ MaxSupply:21000 | 🎉️Twitter: @FlappyOwlNft",
-//         creator: "@flappyowl.lab",
-//         images: ["https://flappyowl.vercel.app/newPict400x400-2.png"],
-//     },
-// }
 export default function Home() {
     return (
         <Head>
