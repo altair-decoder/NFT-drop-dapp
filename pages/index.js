@@ -32,7 +32,7 @@ export default function Home() {
                 />
                 <meta
                     name="keywords"
-                    content="NFT,FlappyOwl NFT,Ethereum,Crypto,Opensea,Flappyowl,Onchain Nft"
+                    content="NFT,FlappyOwlNFT,Ethereum,Crypto,Opensea,Flappyowl,OnchainNft"
                 />
                 <meta
                     property="og:image"
