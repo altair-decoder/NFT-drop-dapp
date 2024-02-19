@@ -15,6 +15,6 @@ export const partnerlist = [
         id: "3",
         name: "vercel",
         link: "https://vercel.com/",
-        pic: "https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg/revision/latest?cb=20221026155821",
+        pic: "https://cdn.theorg.com/6197212c-881c-4e0b-8f94-f9f168d07137_thumb.jpg",
     },
 ]
